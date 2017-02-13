@@ -1,0 +1,20 @@
+<body>
+    <main>
+        <p> Shorten a URL!</p>
+        <% if (loggedin){ %>
+            'Welcome back,
+            <%= username %>
+                <form action='/logout' method='POST'>
+                    <button name='button'>logout</button>
+                </form>
+
+                <%} else { %>
+                    <p> Enter your Username and password </p>
+                    <form action="/login" method="POST">
+                        <input type="username" name="username" placeholder="Username">
+                        <input type="password" name="password" placeholder="password">
+                        <input type="submit" name="Submit">
+                    </form>
+                    <% } %>
+    </main>
+</body>

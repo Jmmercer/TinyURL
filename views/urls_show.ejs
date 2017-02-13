@@ -1,0 +1,12 @@
+<body>
+    <% include partials/_header %>
+        <h1>ShortURL info for: <%= shortURL %></h1>
+        <h4>Short URL = <a href='/u/<%= shortURL %>'>/u/<%= shortURL %></a></h4>
+        <h4>Your full URL: <%= longURL %></h4>
+        <h4>Modify Short URL end point<h4>
+        <form action="/urls/<%= shortURL %>" method="POST">
+            <input name="longURL" value="<%= longURL %>">
+            <input type="submit" value="Submit">
+        </form>
+        <h4><a href="/urls/">URL Index</a></h4>
+</body>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <% include partials/_header %>
+  <p>
+    <a href="/">Shorten a URL</a>
+  </p>
+    <ul>
+      <% for (let shortURL in urls) { %>
+        <li>
+          <%= shortURL %> ---> <%= urls[shortURL].longURL %>
+          <form method="POST" action="/urls/<%= shortURL %>/delete">
+            <a href="/urls/<%= shortURL %>">Edit</a>
+            <input type="submit" value="Delete">
+          </form>
+          <a href="<%= `/u/${shortURL}` %>">Go!</a>
+        </li>
+      <% } %>
+    </ul>
+  </body>
+</html>

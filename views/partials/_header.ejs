@@ -1,0 +1,17 @@
+<% include ../partials/_Head %>
+<h1>TinyApp</h1>
+<% if (user !== undefined) { %>
+    <p>Welcome,
+        <%= user.email %>
+    </p>
+    <form action="/logout" method="POST">
+        <button>Sign Out</button>
+    </form>
+    <% } else { %>
+        <p>
+            <a href="/register">Register</a>
+        </p>
+        <p>
+            <a href="/login">Sign In</a>
+        </p>
+        <% } %>
